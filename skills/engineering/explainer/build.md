@@ -24,11 +24,11 @@ The register is a field manual: flat colour and plain marks, with no gradients o
 - **Structure marks.** An eyebrow, a number, or a divider states something true about the content. Numbers mark a real order.
 - **State.** A state the reader scans for, such as held, open, or settled, shows as a pill or a chip in a status colour, with its word.
 - **Controls.** Each page control, such as the rail's fold, works from the keyboard and shows its focus. Motion stops under `prefers-reduced-motion`. A figure's controls follow the `diagrams` skill.
-- **Agent entry.** The page points its reader's agent to the agent context twice: in a visually hidden, `aria-hidden` block at the top, and in a collapsed "For agents" section at the foot. A fetch tool drops HTML comments and `<script>` bodies, so the entry stays in page text. Each entry links the context by its relative file name, `<page>.context.md`, so the link works from disk and on a host that holds both files in one folder.
+- **Agent entry.** The page points its reader's agent to the agent context twice: in a visually hidden, `aria-hidden` block at the top, and in a collapsed "For agents" section at the foot. A fetch tool drops HTML comments and `<script>` bodies, so the entry stays in page text. Each entry links the context by its relative file name, `<page>.context.md`, so the link works from disk and on a host that holds both files in one folder. The hidden block's link carries `tabindex="-1"`, so the first Tab press lands on a control the reader can see.
 
 ## Looking at it
 
-Serve the page's folder over loopback, since `playwright-cli` refuses `file://` URLs: `python3 -m http.server --bind 127.0.0.1 <port>`, then open `http://127.0.0.1:<port>/<file>`.
+Serve the page's folder over loopback, since `playwright-cli` refuses `file://` URLs: `python3 -m http.server --bind 127.0.0.1 <port>`, then open `http://127.0.0.1:<port>/<file>`. The page carries `<link rel="icon" href="data:,">`, so that server's missing icon file does not show as a console error.
 
 Look at each viewport and theme that step 4's Done when names. Switch the theme with `playwright-cli set-color-scheme dark`. Through `playwright-cli eval`, read `[...document.fonts].filter(f => f.status === 'loaded').map(f => f.family)`: each family in the design plan is in that list. Use every control and read the console. Fix clipped or overlapping text, a typeface that fell back, a broken state, and sideways scroll.
 

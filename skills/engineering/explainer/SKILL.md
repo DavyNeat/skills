@@ -57,7 +57,7 @@ First the **storyboard**: the page as a sequence of frames, in the order the rea
 
 Write the storyboard in the notes, one line per frame: its question and its caption. Done when a person who reads only the captions, in order, would reach the takeaway.
 
-Then write the prose, as the `technical-writing` skill says. The page opens with the takeaway and the asks. Prose joins the frames: it says what a frame cannot show, such as why a part is there, what it costs, or what follows. More than one screen of prose with no frame is a place to add a frame or cut.
+Then write the prose, as the `technical-writing` skill says. The page opens with the takeaway, held to the two or three sentences in the notes, and the asks. Prose joins the frames: it says what a frame cannot show, such as why a part is there, what it costs, or what follows. More than one screen of prose with no frame is a place to add a frame or cut.
 
 - State the central idea, the one mechanism or change the rest depends on, before any detail that leans on it.
 - Introduce each thing the reader has not seen where it is first needed: in a frame's labels or caption, or in the sentence that first uses it. A block of definitions ahead of the first frame is prose to move into frames.
@@ -74,17 +74,17 @@ Done when the page's text and its agent context are written, and each item on th
 
 Build the page as [build.md](build.md) says, from the design plan it asks for, written into the notes before any page code. Draw each frame of the storyboard as [figures.md](figures.md) says.
 
-Done when each frame of the storyboard is on the page and the browser shows the page whole at 1440 px wide and at 390 px, with the title on the first screen at both, in both themes, with the chosen typefaces loaded, in every state of each interactive figure.
+Done when each frame of the storyboard is on the page and the browser shows the page whole on a 1440 × 900 screen and on a 390 × 844 screen, with the title on the first screen and no sideways scroll at both, in both themes, with the chosen typefaces loaded, in every state of each interactive figure.
 
 ## 5. Check
 
-- **Shape checks:** run each check the shape file puts before the cold read.
-- **Cold read:** run it once, as [cold-read.md](cold-read.md) says. Fix what it found, on the page. When its takeaway or its asks differ from yours, fix the page and run it once more. A second read that still differs goes to the user at hand-over, as both takeaways.
+- **Shape checks:** run each check the shape file names, when it names one.
 - **Caption walk:** on the built page, read only the figures and their captions, in order. They reach the takeaway, no figure needs the prose to be read, and only the takeaway and the asks sit above the first figure, apart from the rail's fold line.
 - **Facts:** read again any live state the page reports. Trace the worked case on the built page: each hop follows from a rule the page states.
+- **Cold read:** run it once, as [cold-read.md](cold-read.md) says. Fix what it found, on the page. When its takeaway or its asks differ from yours, fix the page and run it once more. A second read that still differs goes to the user at hand-over, as both takeaways.
 - **Prose:** check the built text against the `technical-writing` skill.
 
-Done when each shape check passes, the cold reader's takeaway and asks match yours or both are set aside for the user, the caption walk passes, the worked case traces on the built page, each section that reports live state is read again, the prose check leaves nothing, and each item in the third list of the last `COLD-<n>.md` is taught on the page, or kept for the user at hand-over with the reason it stays.
+Done when each shape check the file names passes, the caption walk passes, the worked case traces on the built page, each section that reports live state is read again, the cold reader's takeaway and asks match yours or both are set aside for the user, the prose check leaves nothing, and each item in the third list of the last `COLD-<n>.md` is taught on the page, or kept for the user at hand-over with the reason it stays.
 
 ## 6. Hand over
 
