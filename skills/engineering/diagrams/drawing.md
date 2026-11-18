@@ -20,4 +20,4 @@ Add stepping, filtering, path tracing, or pan and zoom when it helps answer the 
 
 Look at the diagram in a browser at a wide and a narrow width, in every interactive state. Fix label collisions, clipped nodes, edges that cross a box, and a reading order that fights the arrows.
 
-Adapted from plannotator/effective-html's `html-diagram` skill (MIT, plannotator).
+Adapted from the html-diagram skill of plannotator/effective-html (MIT, plannotator).

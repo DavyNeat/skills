@@ -77,7 +77,7 @@ Build the page as [build.md](build.md) says. Before any page code, write its des
 - A page with parts for different readers, such as the person who decides, a reviewer, and an agent, gets a sticky rail of section links grouped by reader.
 - The page points its reader's agent to the agent context twice: in a visually hidden, `aria-hidden` block at the top, and in a collapsed "For agents" section at the foot. A fetch tool drops HTML comments and `<script>` bodies, so the entry stays in page text.
 
-Done when each frame of the storyboard is on the page and the browser shows the page whole at full width and at 390 px, in both themes, with the chosen typefaces loaded, in every state of each interactive figure.
+Done when each frame of the storyboard is on the page and the browser shows the page whole at full width and at 390 px, with the title on the first screen at both, in both themes, with the chosen typefaces loaded, in every state of each interactive figure.
 
 ## 5. Check
 

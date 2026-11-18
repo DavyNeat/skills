@@ -16,7 +16,8 @@ The register is a working document: clear hierarchy, considered spacing, little 
 
 ## Page code
 
-- **Themes.** Declare the palette as custom properties on `:root`. Components read only those tokens. Reassign the tokens inside `@media (prefers-color-scheme: dark)`, and again under `:root[data-theme="dark"]` and `:root[data-theme="light"]`, so a viewer's toggle beats the system setting both ways. Choose the dark values by eye for legibility and a working accent.
+- **Themes.** Declare the palette as custom properties on `:root`. Components read only those tokens. Reassign the tokens inside `@media (prefers-color-scheme: dark)`. The reader's system setting alone picks the theme, so the page has no theme control. Choose the dark values by eye for legibility and a working accent.
+- **Rail.** Where the window has room for the rail beside the text, the rail is a sticky column. In a narrower window it folds into one closed `<details>` line above the title, so the title and the takeaway stay on the first screen. A review tool shows the page in a pane narrower than the window, so the fold is the state such a reader gets.
 - **Type.** Embed each face as the fonts README says. Text lines run to about 65 characters. Headings take `text-wrap: balance`. Columns of numbers take `font-variant-numeric: tabular-nums`.
 - **Spacing.** A group of siblings is a flex or grid container with `gap`.
 - **Wide content.** A table, a code block, or a diagram wider than the column scrolls inside its own container with `overflow-x: auto`, so the page body never scrolls sideways.
@@ -30,4 +31,4 @@ Serve the page's folder over loopback, since `playwright-cli` refuses `file://` 
 
 Look at each viewport and theme that step 4's Done when names. Use every control and read the console. Fix clipped or overlapping text, a typeface that fell back, a broken state, and sideways scroll.
 
-Adapted from plannotator/effective-html's `html` and `design-artifact` skills (MIT, plannotator).
+Adapted from the html and design-artifact skills of plannotator/effective-html (MIT, plannotator).
