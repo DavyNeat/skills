@@ -2,7 +2,7 @@
 
 A spec presents a design. Its reader judges the design without opening the code.
 
-A **journey** is the worked case walked through the flow, step by step. A spec that needs several pages ([full-path.md](full-path.md)) usually splits into a rulings page first when calls are open, then the flow, then the records behind it.
+A **journey** is the worked case walked through the flow, step by step. A spec that needs several pages ([several-pages.md](several-pages.md)) usually splits into a rulings page first when calls are open, then the flow, then the records behind it.
 
 ## Reasoning
 
@@ -19,7 +19,6 @@ A **journey** is the worked case walked through the flow, step by step. A spec t
 
 ## On the page
 
-- A part sits in the same spot in every diagram.
 - A journey shows its diagram, then its hops as a native table, one row per hop: the step number, from and to, the kind, what moves, and who it reaches or who acts. Each row says what the product's users see or get, and what the code does about it, with the symbol that does it.
 - Today and the proposal sit side by side on the same case, so the one difference stands out.
 - What is outside this work sits in one table, a row each: what is left out, why, and when it comes back.

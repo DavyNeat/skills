@@ -6,10 +6,10 @@ A decision brief puts calls in front of the user so they can rule on each one re
 
 1. **Calls.** List every item from the effort's open points, sorted as the `sort-findings` skill says. Done when each is a call, or sits in sort-findings' fix, repair, noted, or dismissed bucket with what happens to it.
 2. **Tangles.** Find which calls depend on which. Done when each group's upstream call is named.
-3. **Scale.** Mark each call small, or not. A call is small when it is cheap and easy to undo either way, and neither option changes what the reader or the product's users see or do. Done when each small call has its one line: the call, the pick, and why.
-4. **Weigh.** Weigh each call that isn't small with the `weighing` skill. When the stakes are small or the cost is unmeasured, one option is to observe and alert, and revisit when it fires. Done when each call that isn't small has the assessment that skill requires; the user most often reshapes a pick whose reasoning skipped part of it.
+3. **Scale.** Mark each call small or not, as SKILL.md's step 2 defines it. Done when each small call has its row: the call, its options with what each means for the people it affects, and the pick.
+4. **Weigh.** Weigh each call that isn't small with the `weighing` skill. When the stakes are small or the cost is unmeasured, one option is to observe and alert, and revisit when it fires. Done when each call that isn't small has the assessment that skill requires.
 
-**The takeaway carries** the calls the user rules on, upstream first, each with its pick, what gets measured after the ruling, and what result would reverse it.
+**The takeaway carries** the calls the user rules on, upstream first, each with its pick. A call that is not small also carries what gets measured after the ruling, and what result would reverse it.
 
 ## On the page
 
@@ -18,7 +18,7 @@ A decision brief puts calls in front of the user so they can rule on each one re
 - The small calls follow in one table, a row each: the call, its options with what each means for the people it affects, and the pick.
 - The items that turned out not to be calls sit in one short list.
 
-A **decision card** holds one call, in order: a heading with the question and the call's state; a paragraph giving its **Goal** and how it works **Today**; a table with one row per option and columns for what it **Buys**, what changes and for whom, its **Cost**, and its consequence for the product's users; and the **Pick** in one line, labelled as a pick while the call is open, with what gets measured after the ruling and what result would reverse it.
+A **decision card** holds one call, in order: a heading with the question and the call's state; a paragraph giving its **Goal** and how it works **Today**; a table with one row per option and columns for what it **Buys**, what changes and for whom, the product's users included, and its **Cost**; and the **Pick** in one line, labelled as a pick while the call is open, with what gets measured after the ruling and what result would reverse it.
 
 ## Agent context
 
