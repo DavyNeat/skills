@@ -4,11 +4,11 @@ The Notion build of an explainer: the same reasoning, text, and agent context as
 
 ## Where the pages go
 
-A page goes in the Artifacts database the user names. When the ask names none, ask once, before the build.
+A page goes in the Artifacts database the ask names, or the default the install's rules name. When neither names one, ask once, before the build.
 
 ## Build
 
-- Write each page's source in Notion's markdown (the `notion-pages` skill), as `<page>.md` beside the notes; the hub is `index.md`. A multi-page artifact's build folder ([full-path.md](full-path.md)) holds the same files with `.md` in place of `.html`, and keeps the `PUBLISHED.md` record the `notion-pages` skill's build keeps.
+- Write each page's source in Notion's markdown (the `notion-pages` skill), as `<page>.md` beside the notes; the hub is `index.md`. A multi-page artifact's build folder ([full-path.md](full-path.md)) holds the same files with `.md` in place of `.html`, and keeps `PUBLISHED.md` with each page's id and link.
 - Build each page as a row made from its shape's template (Templates below), with its Shape property set to the shape, and run the `notion-pages` skill's check on it.
 - Keep what SKILL.md's step 4 puts on a page, using the block types below: a toggle for optional depth, and a link to the agent context child page. Typefaces and themes are Notion's.
 - The agent context is a child page titled "Agent context: <page title>", built from `<page>.context.md`.
@@ -55,7 +55,7 @@ A template holds only:
 - Serif type and full width, set on the template page.
 - The cover, accent, and placeholder icon from the table below. The accent colours the 🧭 callout and any coloured heading.
 - The 🧭 callout with the guidance "Open with the takeaway: two or three sentences the reader should be able to say afterwards, and what they are asked to decide or do."
-- One 💡 callout, no background, titled "<Shape>: reasoning chain": the shape file's Reasoning chain word for word, its takeaway line, then "Delete this callout once the page answers it; the page's headings come from its content."
+- One 💡 callout, no background, titled "<Shape>: reasoning chain": the shape file's Reasoning section word for word, its takeaway line, then "Delete this callout once the page answers it; the page's headings come from its content."
 
 | Shape | Cover | Accent | Placeholder icon |
 |---|---|---|---|
@@ -66,8 +66,6 @@ A template holds only:
 | Decision brief | `gradients_2` (orange-red) | Orange | ⚖️ |
 
 A cover is at `https://www.notion.so/images/page-cover/<name>.png`. On a page made from a template, the 🧭 callout carries the page's takeaway, and the reasoning callout is deleted once the page answers it.
-
-A shape file's Reasoning chain is the only source of its template's reasoning callout. When a chain changes, replace that callout in the shape's template in each workspace in the same change, then read the template's blocks back. Done when each template holds exactly the 🧭 callout and the reasoning callout, and the steps match the shape file word for word.
 
 ## Cold read and prose
 
@@ -80,3 +78,7 @@ After step 5, give the user the link to the hub or the one page, with any unexpl
 ## Comments
 
 The user comments on blocks in Notion. Read every open thread on every page of the artifact as the `notion-pages` skill says, and reply on each thread there. An amendment callout, saying what changed and why, goes only on a page someone else owns.
+
+## Changing this skill
+
+A shape file's Reasoning section is the only source of its template's reasoning callout. When one changes, replace that callout in the shape's template in each workspace in the same change, then read the template's blocks back. Done when each template holds exactly the 🧭 callout and the reasoning callout, and the steps match the shape file word for word.

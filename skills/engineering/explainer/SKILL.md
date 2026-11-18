@@ -1,6 +1,6 @@
 ---
 name: explainer
-description: "Explainer: use when the user asks for an explainer, a findings report, or a page about a design, incident, investigation, decision, or handoff."
+description: "Explainer: use when the user asks for an explainer or a reader page: a spec, a findings, incident, or investigation report, a decision brief, or a handoff."
 ---
 
 # Explainer
@@ -10,7 +10,7 @@ The bar: a reader who never opens the source sees what happens and why, and can 
 You write every page yourself, as a **teacher** who knows what this one reader has not seen. A page is one self-contained HTML file. Beside it sits its **agent context**, `<page>.context.md`: what the reader's agent needs to act, and the source and grade of each claim.
 
 - A walk through a pull request or a diff goes to the `guided-review` skill.
-- When the ask names Notion, read [notion.md](notion.md) before step 4.
+- When the page will go to Notion, because the ask says so or the install's rules send it there, read [notion.md](notion.md) before step 4.
 - A draft or report made before this skill was called is source material. Every step still runs.
 
 ## 1. Frame
@@ -22,6 +22,7 @@ Take the shape from the ask, and read its file:
 - [investigation.md](investigation.md): answers an open question with evidence, including a review's findings.
 - [handoff.md](handoff.md): onboards a person to a workflow.
 - [decision-brief.md](decision-brief.md): puts calls in front of the user.
+- A page that explains how something works today, with nothing proposed: [spec.md](spec.md), steps 1 to 4 and 6. Its asks may be none.
 
 Write three things in the effort's notes (the `agent-notes` skill):
 
@@ -33,7 +34,7 @@ Done when the notes hold all three. Rewrite the takeaway and the asks when step 
 
 ## 2. Reason
 
-Work the shape file's chain. Three things hold for every shape:
+Work the shape file's Reasoning steps. Three things hold for every shape:
 
 - **Trace the worked case.** Pick one real, named record and walk it through the mechanism, hop by hop, using only rules you can state. A hop that no stated rule produces is a finding: a gap in the design, or a rule you have not read yet. When no real record exists, build a case and label it as built.
 - **Sort the calls.** A call is anything that waits on a ruling. Sort findings and open questions as the `sort-findings` skill says. Each call gets its options, what each option means for each person it affects, its cost, and your pick with what result would reverse it. Mark each call open, waiting (with the measurement it waits on), or settled (with the ruling that settles it).
@@ -41,7 +42,7 @@ Work the shape file's chain. Three things hold for every shape:
 
 Several judgments that the reader makes apart from each other need several pages: read [full-path.md](full-path.md).
 
-Done when the worked case is traced to its end and every call has its options, pick, and state. Post the takeaway and the asks to the user, then carry on. A correction from the user reopens this step.
+Done when the worked case is traced to its end, every call has its options, pick, and state, and each claim the page rests on has its source and grade in the agent context. Post the takeaway and the asks to the user, then carry on. A correction from the user reopens this step.
 
 ## 3. Storyboard, then write
 
@@ -60,7 +61,7 @@ Then write the prose, as the `technical-writing` skill says. The page opens with
 - Set the worked case apart, above the first step that uses it.
 - Give each thing one name, the source's name, everywhere.
 - State what is true now. Round history and what you checked stay in the notes. A section that reports live state, such as code, records, or a ticket, names what it read and when, such as a commit or a date.
-- Each claim names who is affected, the cause, and the change. A claim reads at its grade: seen, or reasoned out. A partial win is stated as partial.
+- Each claim names who is affected, the cause, and the change. A claim reads at its grade, worded as the `grading-evidence` skill's table says. A partial win is stated as partial.
 - A call reads as its state. Around an open call, the prose holds each outcome. Each call that is not settled shows its options to the reader, in a card or in a table row.
 - The human side holds what changes how the reader acts. Exact paths, commands, queries, and record ids go to the agent context, under the same names the page uses, written as instructions.
 
@@ -68,29 +69,23 @@ Done when the page's text and its agent context are written, and each item on th
 
 ## 4. Build
 
-Build the page as [build.md](build.md) says. Before any page code, write its design plan into the notes.
-
-- Typefaces: pick a pair from [fonts/README.md](fonts/README.md) and embed it. The palette and the layout are yours to design for this subject.
-- Both a light and a dark theme, following the reader's system setting.
-- Draw each frame of the storyboard as [figures.md](figures.md) says.
-- Optional depth, such as raw data or a long reference table, folds behind a `<details>` block. What the reader must read stays open.
-- A page with parts for different readers, such as the person who decides, a reviewer, and an agent, gets a sticky rail of section links grouped by reader.
-- The page points its reader's agent to the agent context twice: in a visually hidden, `aria-hidden` block at the top, and in a collapsed "For agents" section at the foot. A fetch tool drops HTML comments and `<script>` bodies, so the entry stays in page text.
+Build the page as [build.md](build.md) says, from the design plan it asks for, written into the notes before any page code. Draw each frame of the storyboard as [figures.md](figures.md) says.
 
 Done when each frame of the storyboard is on the page and the browser shows the page whole at full width and at 390 px, with the title on the first screen at both, in both themes, with the chosen typefaces loaded, in every state of each interactive figure.
 
 ## 5. Check
 
-- **Cold read:** run it once, as [cold-read.md](cold-read.md) says. Fix what it found, in the prose. When its takeaway or its asks differ from yours, fix the page and run it once more.
+- **Shape checks:** run each check the shape file puts before the cold read.
+- **Cold read:** run it once, as [cold-read.md](cold-read.md) says. Fix what it found, in the prose. When its takeaway or its asks differ from yours, fix the page and run it once more. A second read that still differs goes to the user: both takeaways, with the link.
 - **Caption walk:** on the built page, read only the figures and their captions, in order. They reach the takeaway, no figure needs the prose to be read, and only the takeaway and the asks sit above the first figure.
 - **Facts:** read again any live state the page reports. Trace the worked case on the built page: each hop follows from a rule the page states.
 - **Prose:** check the built text against the `technical-writing` skill.
 
-Done when the cold reader's takeaway and asks match yours. Unexplained items that are left go to the user with the link.
+Done when the cold reader's takeaway and asks match yours or both went to the user, the caption walk passes, each section that reports live state is read again, and the prose check leaves nothing. Unexplained items that are left go to the user with the link.
 
 ## 6. Hand over
 
-Publish as the install's rules say. With no rule, the page stays a local file. Give the user the link or the path, with any unexplained items left from the cold read.
+Publish the page and its agent context together, as the install's rules say, and open the agent context from the published page's link to it. With no rule, both stay local files. Give the user the link or the path, with any unexplained items left from the cold read.
 
 The user comments on the page. For each round:
 
@@ -98,3 +93,5 @@ The user comments on the page. For each round:
 - Record each ruling in the notes. Fold it into the page where it belongs in the argument, so the page reads as if written with the ruling known. Remove what the ruling makes stale.
 - When the user kills a line, find every line of that kind on every page.
 - Rebuild, run step 5's facts and prose checks, publish a new version, and reply on each thread with what changed.
+
+Done when the user has the link and, after each round, every open thread has a reply that says what changed.
