@@ -1,6 +1,6 @@
 ---
 name: explainer
-description: "Explainer: use when the user asks for an explainer or a reader page: a spec, a findings, incident, or investigation report, a decision brief, or a handoff."
+description: "Explainer: use when the user asks for an explainer or a reader page: a spec page, a findings, incident, or investigation report, a decision brief, or a handoff page that onboards a person to a workflow."
 ---
 
 # Explainer
@@ -12,6 +12,9 @@ You write every page yourself, as a **teacher** who knows what this one reader h
 - A walk through a pull request or a diff goes to the `guided-review` skill.
 - When the page will go to Notion, because the ask says so or the install's rules send it there, read [notion.md](notion.md) before step 4.
 - A draft or report made before this skill was called is source material. Every step still runs.
+- Reading that would fill your context, and the drawing of a diagram, can go to a helper run: read [runs.md](runs.md).
+
+Every file of the work lives in one **build folder** under the effort's notes: each `<page>.html` and `<page>.context.md`, `PUBLISHED.md` with the artifact's id and links on its host, and each helper run's brief and result. Screenshots and renders of 1 MB or more go to `~/.local/state/agent-runs/<effort>/`.
 
 ## 1. Frame
 
@@ -22,7 +25,7 @@ Take the shape from the ask, and read its file:
 - [investigation.md](investigation.md): answers an open question with evidence, including a review's findings.
 - [handoff.md](handoff.md): onboards a person to a workflow.
 - [decision-brief.md](decision-brief.md): puts calls in front of the user.
-- A page that explains how something works today, with nothing proposed: [spec.md](spec.md), steps 1 to 4 and 6. Its asks may be none.
+- A page that explains how something works today, with nothing proposed: [spec.md](spec.md)'s Reasoning steps 1 to 4 and 6. Its takeaway carries how it works and how it fails. Its asks may be none.
 
 Write three things in the effort's notes (the `agent-notes` skill):
 
@@ -37,10 +40,10 @@ Done when the notes hold all three. Rewrite the takeaway and the asks when step 
 Work the shape file's Reasoning steps. Three things hold for every shape:
 
 - **Trace the worked case.** Pick one real, named record and walk it through the mechanism, hop by hop, using only rules you can state. A hop that no stated rule produces is a finding: a gap in the design, or a rule you have not read yet. When no real record exists, build a case and label it as built.
-- **Sort the calls.** A call is anything that waits on a ruling. Sort findings and open questions as the `sort-findings` skill says. Each call gets its options, what each option means for each person it affects, its cost, and your pick with what result would reverse it. Mark each call open, waiting (with the measurement it waits on), or settled (with the ruling that settles it).
+- **Sort the calls.** A call is anything that waits on a ruling. Sort findings and open questions as the `sort-findings` skill says. Each call gets its options, what each option means for each person it affects, and your pick. A call that is not small also gets its cost and what result would reverse the pick, as the `weighing` skill says. Mark each call open, waiting (with the measurement it waits on), or settled (with the ruling that settles it).
 - **Grade the claims** as the `grading-evidence` skill says. Each claim the page rests on goes into the agent context with its source and its grade.
 
-Several judgments that the reader makes apart from each other need several pages: read [full-path.md](full-path.md).
+Several judgments that the reader makes apart from each other need several pages: read [several-pages.md](several-pages.md).
 
 Done when the worked case is traced to its end, every call has its options, pick, and state, and each claim the page rests on has its source and grade in the agent context. Post the takeaway and the asks to the user, then carry on. A correction from the user reopens this step.
 
@@ -60,7 +63,7 @@ Then write the prose, as the `technical-writing` skill says. The page opens with
 - Introduce each thing the reader has not seen where it is first needed: in a frame's labels or caption, or in the sentence that first uses it. A block of definitions ahead of the first frame is prose to move into frames.
 - Set the worked case apart, above the first step that uses it.
 - Give each thing one name, the source's name, everywhere.
-- State what is true now. Round history and what you checked stay in the notes. A section that reports live state, such as code, records, or a ticket, names what it read and when, such as a commit or a date.
+- State what is true now. Round history and what you checked stay in the notes, except what the shape file asks the page to show. A section that reports live state, such as code, records, or a ticket, names what it read and when, such as a commit or a date.
 - Each claim names who is affected, the cause, and the change. A claim reads at its grade, worded as the `grading-evidence` skill's table says. A partial win is stated as partial.
 - A call reads as its state. Around an open call, the prose holds each outcome. Each call that is not settled shows its options to the reader, in a card or in a table row.
 - The human side holds what changes how the reader acts. Exact paths, commands, queries, and record ids go to the agent context, under the same names the page uses, written as instructions.
@@ -71,21 +74,21 @@ Done when the page's text and its agent context are written, and each item on th
 
 Build the page as [build.md](build.md) says, from the design plan it asks for, written into the notes before any page code. Draw each frame of the storyboard as [figures.md](figures.md) says.
 
-Done when each frame of the storyboard is on the page and the browser shows the page whole at full width and at 390 px, with the title on the first screen at both, in both themes, with the chosen typefaces loaded, in every state of each interactive figure.
+Done when each frame of the storyboard is on the page and the browser shows the page whole at 1440 px wide and at 390 px, with the title on the first screen at both, in both themes, with the chosen typefaces loaded, in every state of each interactive figure.
 
 ## 5. Check
 
 - **Shape checks:** run each check the shape file puts before the cold read.
-- **Cold read:** run it once, as [cold-read.md](cold-read.md) says. Fix what it found, in the prose. When its takeaway or its asks differ from yours, fix the page and run it once more. A second read that still differs goes to the user: both takeaways, with the link.
-- **Caption walk:** on the built page, read only the figures and their captions, in order. They reach the takeaway, no figure needs the prose to be read, and only the takeaway and the asks sit above the first figure.
+- **Cold read:** run it once, as [cold-read.md](cold-read.md) says. Fix what it found, on the page. When its takeaway or its asks differ from yours, fix the page and run it once more. A second read that still differs goes to the user at hand-over, as both takeaways.
+- **Caption walk:** on the built page, read only the figures and their captions, in order. They reach the takeaway, no figure needs the prose to be read, and only the takeaway and the asks sit above the first figure, apart from the rail's fold line.
 - **Facts:** read again any live state the page reports. Trace the worked case on the built page: each hop follows from a rule the page states.
 - **Prose:** check the built text against the `technical-writing` skill.
 
-Done when the cold reader's takeaway and asks match yours or both went to the user, the caption walk passes, each section that reports live state is read again, and the prose check leaves nothing. Unexplained items that are left go to the user with the link.
+Done when each shape check passes, the cold reader's takeaway and asks match yours or both are set aside for the user, the caption walk passes, the worked case traces on the built page, each section that reports live state is read again, and the prose check leaves nothing. Unexplained items that are left go to the user at hand-over.
 
 ## 6. Hand over
 
-Publish the page and its agent context together, as the install's rules say, and open the agent context from the published page's link to it. With no rule, both stay local files. Give the user the link or the path, with any unexplained items left from the cold read.
+Publish the page and its agent context together, as the install's rules say, and open the agent context from the published page's link to it. With no rule, both stay local files. Give the user the link or the path, with what step 5 left for them.
 
 The user comments on the page. For each round:
 
