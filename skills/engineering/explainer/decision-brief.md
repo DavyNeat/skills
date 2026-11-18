@@ -9,7 +9,7 @@ A decision brief puts calls in front of the user so they can rule on each one re
 3. **Scale.** Mark each call small or not, as SKILL.md's step 2 defines it. Done when each small call has its row: the call, its options with what each means for the people it affects, and the pick.
 4. **Weigh.** Weigh each call that isn't small with the `weighing` skill. When the stakes are small or the cost is unmeasured, one option is to observe and alert, and revisit when it fires. Done when each call that isn't small has the assessment that skill requires.
 
-**The takeaway carries** the calls the user rules on, upstream first, each with its pick, what gets measured after the ruling, and what result would reverse it.
+**The takeaway carries** the calls the user rules on, upstream first, each with its pick. A call that is not small also carries what gets measured after the ruling, and what result would reverse it.
 
 ## On the page
 

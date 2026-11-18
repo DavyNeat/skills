@@ -17,13 +17,13 @@ The register is a field manual: flat colour and plain marks, with no gradients o
 ## Page code
 
 - **Themes.** The page has a light and a dark theme. Declare the palette as custom properties on `:root`. Components read only those tokens. Reassign the tokens inside `@media (prefers-color-scheme: dark)`. The reader's system setting alone picks the theme, so the page has no theme control. Choose the dark values by eye for legibility and a working accent.
-- **Rail.** A page with five or more sections gets a rail of section links, grouped by reader when the page has parts for more than one. Where the window has room for the rail beside the text, the rail is a sticky column. In a narrower window it folds into one closed `<details>` line above the title, so the title and the takeaway stay on the first screen. A review tool shows the page in a pane narrower than the window, so the fold is the state such a reader gets.
+- **Rail.** A page with five or more sections gets a rail of section links, in groups under a short heading each, such as one group per reader or per part of the argument. Where the window has room for the rail beside the text, the rail is a sticky column. In a narrower window it folds into one closed `<details>` line above the title, so the title and the takeaway stay on the first screen. A review tool shows the page in a pane narrower than the window, so the fold is the state such a reader gets.
 - **Type.** Embed each face as the fonts README says. Text lines run to about 65 characters. Headings take `text-wrap: balance`. Columns of numbers take `font-variant-numeric: tabular-nums`.
 - **Depth.** Optional depth, such as raw data or a long reference table, folds behind a `<details>` block. What the reader must read stays open.
 - **Wide content.** A table or a code block wider than the column scrolls inside its own container with `overflow-x: auto`, so the page body never scrolls sideways.
 - **Structure marks.** An eyebrow, a number, or a divider states something true about the content. Numbers mark a real order.
 - **State.** A state the reader scans for, such as held, open, or settled, shows as a pill or a chip in a status colour, with its word.
-- **Controls.** Each page control, such as the rail's fold, works from the keyboard and shows its focus. A figure's controls follow the `diagrams` skill.
+- **Controls.** Each page control, such as the rail's fold, works from the keyboard and shows its focus. Motion stops under `prefers-reduced-motion`. A figure's controls follow the `diagrams` skill.
 - **Agent entry.** The page points its reader's agent to the agent context twice: in a visually hidden, `aria-hidden` block at the top, and in a collapsed "For agents" section at the foot. A fetch tool drops HTML comments and `<script>` bodies, so the entry stays in page text. Each entry links the context by its relative file name, `<page>.context.md`, so the link works from disk and on a host that holds both files in one folder.
 
 ## Looking at it

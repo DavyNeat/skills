@@ -14,7 +14,7 @@ You write every page yourself, as a teacher who knows what this one reader has n
 - A draft or report made before this skill was called is source material. Every step still runs.
 - Reading across a repo goes to an evidence run. A page with four or more diagrams sends each to a diagram run, side by side. For either, read [runs.md](runs.md).
 
-Every file of the work lives in one **build folder** under the effort's notes: each `<page>.html` and `<page>.context.md`, `PUBLISHED.md` with the artifact's id and links on its host, and each helper run's brief and result. Screenshots and renders of 1 MB or more go to `~/.local/state/agent-runs/<effort>/`.
+Every file of the work lives in one **build folder** under the effort's notes: each `<page>.html` and `<page>.context.md`, `PUBLISHED.md` with the artifact's id and links on its host, and each helper run's brief and result. Screenshots and renders of 1 MB or more go to `~/.local/state/agent-runs/<effort>/`, except the cold read's, which stay in the build folder.
 
 ## 1. Frame
 
@@ -25,7 +25,7 @@ Take the shape from the ask, and read its file:
 - [investigation.md](investigation.md): answers an open question with evidence, including a review's findings.
 - [handoff.md](handoff.md): onboards a person to a workflow.
 - [decision-brief.md](decision-brief.md): puts calls in front of the user.
-- A page that explains how something works today, with nothing proposed: [spec.md](spec.md)'s Reasoning steps 1 to 4 and 6. Its takeaway carries how it works and how it fails. Its asks may be none.
+- A page that explains how something works today, with nothing proposed: [spec.md](spec.md)'s Reasoning steps 1 to 4 and 6. Its takeaway carries how it works and how it fails, its asks may be none, and spec.md's page rules for today against the proposal and for what is outside the work do not apply. When the reader rules on a proposed change to what the page explains, the page is a spec: run all eight steps.
 
 Write three things in the effort's notes (the `agent-notes` skill):
 
@@ -97,4 +97,4 @@ The user comments on the page. For each round:
 - When the user kills a line, find every line of that kind on every page.
 - Rebuild, run step 5's facts and prose checks, publish a new version, and reply on each thread with what changed.
 
-Done when the user has the link and, after each round, every open thread has a reply that says what changed.
+Done when the user has the link or the path and, after each round, every open thread has a reply that says what changed.
