@@ -34,7 +34,7 @@ For one sketch inside a reply, the question is the thing you are about to explai
    1. Each arrow runs one way and carries its label on the arrow: a verb phrase that reads in the arrow's direction, such as `writes` or `polls every 30s`.
    2. Each box says what it is. Put the type in the box when the types differ, as in `Redis [store]`. A C4 container or component also names its technology.
    3. Each thing has one name across every diagram in the answer.
-   4. A title line names the type and the scope, as in `Sequence: one login and one token refresh`.
+   4. A title line names the type and the scope, as in `Sequence: one login and one token refresh`. On a page, the figure's caption takes its place.
    5. A **key** explains each mark whose meaning the labels do not state, such as a line style, a colour, or a shape.
 
    Code-level structure, such as the classes or the tables as built, is generated from the code and not drawn by hand.

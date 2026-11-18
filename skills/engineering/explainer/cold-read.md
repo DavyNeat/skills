@@ -2,9 +2,9 @@
 
 A cold reader gets the page and the reader's profile, and nothing else. It shows where the page leans on what only you know.
 
-Write the profile to `COLD-<n>-profile.md` in the build folder; `n` counts cold reads in the effort, from 1. It holds who the reader is, their role, and what they already know, from step 1's notes. What they will decide and the not-seen list stay in the notes: the cold reader has to find those on the page.
+Write the profile to `COLD-<n>-profile.md` in the build folder; `n` counts cold reads in the effort, from 1. It holds who the reader is, their role, and the systems they work in. What they will decide and the not-seen list stay in the notes: the cold reader has to find those on the page.
 
-Save the **reader's copy** of the page as `COLD-<n>-page.md`: the page's text in reading order, each figure replaced by its caption and its text alternative, with no fonts, styles, or scripts. Take one screenshot of each figure's still frame, as `COLD-<n>-<figure>.png`. The built file is mostly encoded fonts and markup, which a helper cannot read as a page.
+Save the **reader's copy** of the page as `COLD-<n>-page.md`, made from the built page: the page's text in reading order, each figure replaced by its caption and its text alternative, with no fonts, styles, or scripts. Take one screenshot of each figure's still frame, at 1440 px wide in the light theme, as `COLD-<n>-<figure>.png` in the build folder, whatever its size. The built file is mostly encoded fonts and markup, which a helper cannot read as a page.
 
 Start one helper as the `scratch-agents` skill says, in its `explainer cold read` role, with this brief:
 

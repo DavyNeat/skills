@@ -9,7 +9,7 @@ Something broke. The reader decides what to fix and in what order. Their agent p
 3. **The mechanism.** Trace what produced that state, every step, in the code and the logs, with the `how` skill. Done when each step cites its file or log line, and where the team's belief about the system differed from what it did is stated.
 4. **Failure modes.** Find which failures the same mechanism produces, and set aside the symptoms that only happened at the same time, saying why. Done when each mode is marked still live, with what fires next, such as a paused job, a queued email, or a pending sync, or contained.
 5. **Rank.** Count the records each mode hit against its total, compare a control case the bug spared, and find when it started and what changed, with the `why` skill. Done when the modes are ordered by who they hurt and how often, each with its count.
-6. **Fixes.** For each mode, list the fixes that end it at its root cause (the `principle-fix-root-causes` skill), and test each against the real cases it must still allow, such as two people who share a name, and the working behavior it must keep. Done when each fix is a repair or a call for the user, and anyone downstream who must act is named.
+6. **Fixes.** For each mode, list the fixes that end it at its root cause (the `principle-fix-root-causes` skill), and test each against the real cases it must still allow, such as two people who share a name, and the working behavior it must keep. Done when each fix sits in the `sort-findings` skill's fix, repair, or call bucket, and anyone downstream who must act is named.
 
 **The takeaway carries** the modes, the fixes, and the calls, from steps 5 and 6.
 
@@ -17,7 +17,7 @@ Something broke. The reader decides what to fix and in what order. Their agent p
 
 - What broke, what is still live, and the ranking come first; the reader acts on them before anything else.
 - Each failure mode is a worked case on a real record, with a diagram of its mechanism and its numbers.
-- The calls are decision cards, as [decision-brief.md](decision-brief.md) says; the repairs are listed apart from them.
+- The calls are decision cards, as [decision-brief.md](decision-brief.md) says; fixes and repairs follow in one list, each marked with its bucket.
 - What the repair so far taught, wrong turns included, follows the fixes.
 - A downstream session, person, or team is named only where it changes what the reader does, such as a team the reader must warn; what each of them needs goes to them, not onto the page.
 - Each fix's shape is agreed in the artifact before anyone files tickets.

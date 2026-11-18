@@ -1,18 +1,18 @@
 ---
 name: explainer
-description: "Explainer: use when the user asks for an explainer or a reader page: a spec page, a findings, incident, or investigation report, a decision brief, or a handoff page that onboards a person to a workflow."
+description: "Explainer: use when the user asks for an explainer or a reader page: how something works, a spec page, a findings, incident, or investigation report, a decision brief, or a handoff page that onboards a person to a workflow."
 ---
 
 # Explainer
 
 The bar: a reader who never opens the source sees what happens and why, and can make each call that is theirs. Their coding agent acts from the page's agent context without digging the evidence up again.
 
-You write every page yourself, as a **teacher** who knows what this one reader has not seen. A page is one self-contained HTML file. Beside it sits its **agent context**, `<page>.context.md`: what the reader's agent needs to act, and the source and grade of each claim.
+You write every page yourself, as a teacher who knows what this one reader has not seen. A page is one self-contained HTML file. Beside it sits its **agent context**, `<page>.context.md`: what the reader's agent needs to act, and the source and grade of each claim.
 
 - A walk through a pull request or a diff goes to the `guided-review` skill.
-- When the page will go to Notion, because the ask says so or the install's rules send it there, read [notion.md](notion.md) before step 4.
+- When the page will go to Notion, because the ask says so or the install's rules send it there, read [notion.md](notion.md) before step 3.
 - A draft or report made before this skill was called is source material. Every step still runs.
-- Reading that would fill your context, and the drawing of a diagram, can go to a helper run: read [runs.md](runs.md).
+- Reading across a repo goes to an evidence run. A page with four or more diagrams sends each to a diagram run, side by side. For either, read [runs.md](runs.md).
 
 Every file of the work lives in one **build folder** under the effort's notes: each `<page>.html` and `<page>.context.md`, `PUBLISHED.md` with the artifact's id and links on its host, and each helper run's brief and result. Screenshots and renders of 1 MB or more go to `~/.local/state/agent-runs/<effort>/`.
 
@@ -33,14 +33,14 @@ Write three things in the effort's notes (the `agent-notes` skill):
 - **The takeaway:** two or three sentences the reader should be able to say after reading.
 - **The asks:** what the reader is asked to decide or do.
 
-Done when the notes hold all three. Rewrite the takeaway and the asks when step 2 changes them.
+Done when the notes hold all three, and the not-seen list names every term, system, earlier decision, and premise that the takeaway and the asks use. Rewrite the takeaway and the asks when step 2 changes them.
 
 ## 2. Reason
 
 Work the shape file's Reasoning steps. Three things hold for every shape:
 
 - **Trace the worked case.** Pick one real, named record and walk it through the mechanism, hop by hop, using only rules you can state. A hop that no stated rule produces is a finding: a gap in the design, or a rule you have not read yet. When no real record exists, build a case and label it as built.
-- **Sort the calls.** A call is anything that waits on a ruling. Sort findings and open questions as the `sort-findings` skill says. Each call gets its options, what each option means for each person it affects, and your pick. A call that is not small also gets its cost and what result would reverse the pick, as the `weighing` skill says. Mark each call open, waiting (with the measurement it waits on), or settled (with the ruling that settles it).
+- **Sort the calls.** A call is anything that waits on a ruling. Sort findings and open questions as the `sort-findings` skill says. Each call gets its options, what each option means for each person it affects, and your pick. A call is **small** when it is cheap and easy to undo either way, and neither option changes what the reader or the product's users see or do. A call that is not small also gets its cost and what result would reverse the pick, as the `weighing` skill says. Mark each call open, waiting (with the measurement it waits on), or settled (with the ruling that settles it).
 - **Grade the claims** as the `grading-evidence` skill says. Each claim the page rests on goes into the agent context with its source and its grade.
 
 Several judgments that the reader makes apart from each other need several pages: read [several-pages.md](several-pages.md).
@@ -51,7 +51,7 @@ Done when the worked case is traced to its end, every call has its options, pick
 
 First the **storyboard**: the page as a sequence of frames, in the order the reader needs them. A frame is one figure with its caption: a diagram, a screenshot, a real record, a table, or a code view. [figures.md](figures.md) says how to choose each one.
 
-- The first frame shows the whole subject in one picture. It sits directly under the takeaway and the asks, with no prose between. Each part in it carries a label that says what the part does, so the frame teaches its own terms.
+- The first frame shows the whole subject in one picture. On a hub it is the numbered reading-order list, on an incident page the ranking, and on a decision brief the calls and which call each depends on. It sits directly under the takeaway and the asks, with no prose between; a date or a "read at" line is part of the takeaway. Each part in it carries a label that says what the part does, so the frame teaches its own terms.
 - Each idea the reader must hold gets a frame. So does each hop of the worked case that changes what the reader believes, and each call whose options differ in a way a picture can show.
 - A caption states the one claim its frame shows.
 
@@ -65,7 +65,7 @@ Then write the prose, as the `technical-writing` skill says. The page opens with
 - Give each thing one name, the source's name, everywhere.
 - State what is true now. Round history and what you checked stay in the notes, except what the shape file asks the page to show. A section that reports live state, such as code, records, or a ticket, names what it read and when, such as a commit or a date.
 - Each claim names who is affected, the cause, and the change. A claim reads at its grade, worded as the `grading-evidence` skill's table says. A partial win is stated as partial.
-- A call reads as its state. Around an open call, the prose holds each outcome. Each call that is not settled shows its options to the reader, in a card or in a table row.
+- A call reads as its state. Around an open call, the prose holds each outcome. Each call that is not settled shows its options to the reader, in a decision card or a row of the small-calls table, as [decision-brief.md](decision-brief.md) says.
 - The human side holds what changes how the reader acts. Exact paths, commands, queries, and record ids go to the agent context, under the same names the page uses, written as instructions.
 
 Done when the page's text and its agent context are written, and each item on the reader's not-seen list is taught where it is first needed, or cut.
@@ -84,7 +84,7 @@ Done when each frame of the storyboard is on the page and the browser shows the 
 - **Facts:** read again any live state the page reports. Trace the worked case on the built page: each hop follows from a rule the page states.
 - **Prose:** check the built text against the `technical-writing` skill.
 
-Done when each shape check passes, the cold reader's takeaway and asks match yours or both are set aside for the user, the caption walk passes, the worked case traces on the built page, each section that reports live state is read again, and the prose check leaves nothing. Unexplained items that are left go to the user at hand-over.
+Done when each shape check passes, the cold reader's takeaway and asks match yours or both are set aside for the user, the caption walk passes, the worked case traces on the built page, each section that reports live state is read again, the prose check leaves nothing, and each item in the third list of the last `COLD-<n>.md` is taught on the page, or kept for the user at hand-over with the reason it stays.
 
 ## 6. Hand over
 
